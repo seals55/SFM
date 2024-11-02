@@ -1,0 +1,13 @@
+NAME "Hostile Mob Simulation"
+
+EVERY 20 TICKS DO
+    INPUT hostilenetworks:prediction_matrix FROM pred
+    INPUT FROM sims
+    OUTPUT hostilenetworks:prediction_matrix TO sims
+    OUTPUT hostilenetworks:prediction, hostilenetworks:*_prediction TO interface
+END
+
+EVERY 1 TICKS DO
+    INPUT fe:: FROM power
+    OUTPUT fe:: TO sims
+END

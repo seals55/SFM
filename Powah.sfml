@@ -1,0 +1,23 @@
+NAME "Powah"
+
+EVERY 20 TICKS DO
+    -- on their own, input statements do nothing
+    -- there is no item buffer
+    INPUT redstone, 
+            blue_ice, 
+            powah:uraninite, 
+            mysticalagradditions:insanium_coal_block  FROM items
+    INPUT fluid:: FROM sink
+
+    -- all the magic happens here
+    OUTPUT redstone, 
+              blue_ice, 
+              powah:uraninite, 
+              mysticalagradditions:insanium_coal_block TO powah
+    OUTPUT fluid:: TO powah
+END
+
+EVERY 1 TICKS DO
+    INPUT fe:: FROM powah
+    OUTPUT fe:: TO flux
+END

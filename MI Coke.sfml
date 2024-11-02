@@ -1,0 +1,21 @@
+NAME "MI Coke"
+
+EVERY 20 TICKS DO
+    INPUT coal FROM i_input
+    OUTPUT TO MI_II
+END
+
+EVERY 20 TICKS DO
+    INPUT modern_industrialization:coke FROM MI_IO
+    OUTPUT modern_industrialization:coke TO i_output
+END
+
+EVERY 20 TICKS DO
+    INPUT fluid:modern_industrialization:steam FROM f_input TOP SIDE
+    OUTPUT fluid:modern_industrialization:steam TO MI_FI
+END
+
+EVERY 20 TICKS DO
+    INPUT fluid:modern_industrialization:creosote FROM MI_FO
+    OUTPUT fluid:modern_industrialization:creosote TO f_output TOP SIDE
+END

@@ -16,7 +16,7 @@ end
 --placing all items in the right machines
 every 20 ticks do
     input fluid::water from Water
-    output fluid::water to WVProces,wa north side --Back side
+    output fluid::water to WVProces,OxyGen north side --Back side
     forget
     input from Storage
     output *sulfur* to SProces north side
@@ -67,5 +67,5 @@ end
 --exporting fuel
 every 20 ticks do
     input gas:: from FFProces north side
-    output gas:: to FFStorage top side
+    output gas:: to FFStorage bottom side
 end
