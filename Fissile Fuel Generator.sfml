@@ -1,0 +1,71 @@
+Name "Fissile Fuel Generator"
+
+every 1 ticks do
+    input fe:: from Energy north side
+    output fe:: to FFProces,
+                    WVProces,
+                    SProces,
+                    FLProces,
+                    URProces,
+                    SAProces, 
+                    UOProces,
+                    UHEXProces,
+                    SuTri,
+                    OxyGen north side
+end
+--placing all items in the right machines
+every 20 ticks do
+    input fluid::water from Water
+    output fluid::water to WVProces,wa north side --Back side
+    forget
+    input from Storage
+    output *sulfur* to SProces north side
+    output *fluo* to FLProces north side
+    output *uran* to URProces north side
+    forget
+end
+
+--making sulfur trioxide
+every 20 ticks do
+    input gas:: from SProces south side -- sulfur dioxide
+    input gas:: from OxyGen north side --oxygen
+    output gas::sulfur_dioxide to SuTri north side
+    output gas::oxygen to SuTri south side
+    forget
+end
+
+--making sulpheric Acid
+every 20 ticks do
+    input gas:: from WVProces south side
+    input gas::sulfur_trioxide from SuTri west side --left
+    output gas::water_vapor to SAProces south side
+    output gas::sulfur_trioxide to SAProces north side
+end
+--making hydrofluoric Acid
+every 20 ticks do
+    input gas:: from SAProces east side --right
+    output gas:: to FLProces south side
+end
+--making uranium oxide
+every 20 ticks do
+    input from URProces south side
+    output to UOProces south side
+end
+--making uranium hexafluorite
+every 20 ticks do
+    input gas:: from FLProces north side
+    input gas:: from UOProces north side
+    output gas::uranium_oxide to UHEXProces south side
+    output gas::hydrofluoric_acid to UHEXProces north side
+end
+
+--making fissile fuel :)
+every 20 ticks do
+    input gas:: from UHEXProces east side -- right
+    output gas:: to FFProces south side
+end
+--exporting fuel
+every 20 ticks do
+    input gas:: from FFProces north side
+    output gas:: to FFStorage top side
+end

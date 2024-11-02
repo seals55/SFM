@@ -1,0 +1,144 @@
+name "everything bees"
+
+every 20 ticks do
+    input from hive
+    output to centrifuge_buffer
+end
+every 1 ticks do
+    input fe:: from power
+    output fe:: to centrifuge, 
+                     breeder, 
+                     incubator, 
+                     gene_centrifuge
+end
+every 20 ticks do
+    input from interface
+    output minecraft:glass_bottle to each hive
+    output productivebees:honey_treat to incubator
+end
+every 20 ticks do
+  input minecraft:honey_bottle,
+         minecraft:chorus_fruit,
+         minecraft:chorus_flower,
+         minecraft:nautilus_shell,
+         minecraft:wet_sponge,
+         minecraft:sponge,
+         minecraft:netherite_scrap,
+         minecraft:spider_eye,
+         minecraft:rabbit_hide,
+         minecraft:rabbit_foot,
+         minecraft:rabbit,
+         minecraft:nether_star,  
+         ars_nouveau:red_archwood_log, 
+         ars_nouveau:blue_archwood_log, 
+         ars_nouveau:green_archwood_log, 
+         ars_nouveau:purple_archwood_log,
+         ars_nouveau:wilden_spike,
+         ars_nouveau:wilden_wing,
+         ars_nouveau:wilden_horn,
+         ars_elemental:yellow_archwood_log,
+         forbidden_arcanus:edelwood_log,
+         forbidden_arcanus:aurum_log,
+         forbidden_arcanus:eternal_stella,
+         occultism:afrit_essence,       
+         the_bumblezone:pollen_puff,
+         productivebees:sugarbag_honeycomb,
+         irons_spellbooks:*_ink,
+         irons_spellbooks:*_book,
+         irons_spellbooks:scroll,
+         irons_spellbooks:blank_rune,
+         irons_spellbooks:ice_rune,
+         irons_spellbooks:holy_rune,
+         irons_spellbooks:evocation_rune,
+         irons_spellbooks:blood_staff,
+         irons_spellbooks:arcane_essence,
+         irons_spellbooks:cinder_essence,
+         minecraft:bone, minecraft:cod, minecraft:pufferfish, 
+         minecraft:kelp, minecraft:salmon, minecraft:tropical_fish,
+         undergarden:forgotten_nugget,
+         undergarden:depthrock,
+         evilcraft:undead_log from centrifuge_buffer
+  output minecraft:honey_bottle, 
+           minecraft:chorus_fruit,
+           minecraft:chorus_flower,
+           minecraft:spider_eye,
+           minecraft:wet_sponge,
+           minecraft:sponge,
+           minecraft:netherite_scrap, 
+           minecraft:rabbit_hide,
+           minecraft:rabbit_foot,
+           minecraft:rabbit,  
+           minecraft:nether_star,  
+           ars_nouveau:red_archwood_log, 
+           ars_nouveau:blue_archwood_log, 
+           ars_nouveau:green_archwood_log, 
+           ars_nouveau:purple_archwood_log, 
+           ars_nouveau:wilden_spike,
+           ars_nouveau:wilden_wing,
+           ars_nouveau:wilden_horn,
+           ars_elemental:yellow_archwood_log,
+           forbidden_arcanus:edelwood_log,
+           forbidden_arcanus:aurum_log,
+           forbidden_arcanus:eternal_stella,
+           occultism:afrit_essence,
+           productivebees:sugarbag_honeycomb,
+           irons_spellbooks:*_ink,
+           irons_spellbooks:*_book,
+           irons_spellbooks:scroll,
+           irons_spellbooks:blank_rune,
+           irons_spellbooks:ice_rune,
+           irons_spellbooks:holy_rune,
+           irons_spellbooks:evocation_rune,
+           irons_spellbooks:blood_staff,
+           irons_spellbooks:arcane_essence,
+           irons_spellbooks:cinder_essence,
+           minecraft:nautilus_shell,
+           the_bumblezone:pollen_puff,
+           minecraft:bone, minecraft:cod, minecraft:pufferfish, 
+           minecraft:kelp, minecraft:salmon, minecraft:tropical_fish,
+           undergarden:depthrock,
+           undergarden:forgotten_nugget,
+           evilcraft:undead_log to interface
+end
+every 20 ticks do
+    input from centrifuge_buffer
+    output to centrifuge slots 1
+    output productivebees:bee_cage to breeding_output
+end
+every 20 ticks do
+    input except productivebees:*_comb from centrifuge
+    output to interface
+end
+every 20 ticks do
+    input fluid:: from centrifuge
+    output fluid:: to interface
+end
+every 20 ticks do
+    input productivebees:bee_cage from squish_buffer
+    output to dispenser
+end
+every 20 ticks do
+    input from squish_buffer
+    output to gene_centrifuge slots 1
+end
+every 20 ticks do
+    input from gene_centrifuge
+    output to index
+end
+every 20 ticks do
+    input the_bumblezone:bee_stinger from gene_centrifuge
+    output to interface
+end
+every 20 ticks do
+    input from interface
+    output minecraft:glass_bottle to bottler
+    output productivebees:bee_cage to breeder
+end
+every 20 ticks do
+    input from breeder slots 5
+    output to incubator slots 0
+end
+every 20 ticks do
+    input from incubator slots 2
+    output to breeding_output
+end

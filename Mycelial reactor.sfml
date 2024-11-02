@@ -1,0 +1,26 @@
+Name "Mycelial Reactor"
+
+every 20 ticks do
+    input from int top side
+    output to gen top side
+end
+every 20 ticks do
+    input from gen top side
+    output minecraft:book, minecraft:glass_bottle to int
+end
+every 20 ticks do
+    input fluid:: from meat
+    output fluid:: to meatal
+end
+every 20 ticks do
+    input fluid:: from lava
+    output fluid:: to heat
+end
+every 20 ticks do
+    input fluid:: from cow
+    output fluid:: to slimey
+end
+every 1 ticks do
+    input fe:: from gen
+    output fe:: to trash
+end
