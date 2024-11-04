@@ -111,8 +111,12 @@ every 20 ticks do
 end
 every 20 ticks do
     input fluid:: from centrifuge
-    output fluid:: to interface
+    output fluid:: to interface2
 end
+--every 20 ticks do
+--    input fluid:productivebees:honey from centrifuge
+--    output fluid:productivebees:honey to interface2
+--end
 every 20 ticks do
     input productivebees:bee_cage from squish_buffer
     output to dispenser

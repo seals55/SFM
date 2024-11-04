@@ -24,3 +24,42 @@ every 1 ticks do
     input fe:: from gen
     output fe:: to trash
 end
+
+
+-- this is for the ppl who would search for it and was looking for it on reddit
+
+-- just so you know most of the generators are a copy from extra utilities and ofc mycelial reactor is like rainbow generator
+
+-- im using stuff listed here with (*)
+
+-- furnace mycelial generator : (*)coal blocks , coal , planks , sticks
+
+-- ender mycelial generator : (*)ender pearls , eye of ender
+
+-- potion mycelial generator : (*)water bottle , potions
+
+-- crimed mycelial generator : (*)nether wart block , crimson fungus , crimson roots , warped wart block , warped fungus , warped roots
+
+-- magma mycelial generator : lava
+
+-- meatallurgic mycelial generator : liquid meat and some kind of ingot like iron
+
+-- halitosis mycelial generator : dragon's breath
+
+-- explosive mycelial generator : (*)tnt , gunpowder
+
+-- netherstar mycelial generator : netherstar
+
+-- death mycelial generator : (*)bones , rotten flesh , bone block , wither skeleton skull
+
+-- slimey mycelial generator : milk and slimeball
+
+-- culinary mycelial generator : any kind of food
+
+-- frosty mycelial generator : snow , snow blocks , snowballs , (*)ice , packed ice , blue ice
+
+-- pink mycelial generator : pink dye (any pink item could be used but it doesnt matter since they have the same stats)
+
+-- rocket mycelial generator : fireworks (flight duration : 1 is the best , since the time is the same the only difference would be power generated )
+
+-- disenchantment mycelial generator : enchanted stuff (im using enchantment factory for enchanting books put these books in the generator get the book back and loop it)
