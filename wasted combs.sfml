@@ -1,0 +1,11 @@
+NAME "Wasted Comb Processing"
+
+EVERY 20 TICKS DO
+    INPUT productivebees:configurable_comb FROM inv
+    OUTPUT productivebees:configurable_comb TO oxi TOP SIDE
+END
+
+EVERY 1 TICKS DO
+    INPUT fe:: FROM power
+    OUTPUT fe:: TO oxi TOP SIDE
+END
